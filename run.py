@@ -1,8 +1,5 @@
 import sys
-import os
 from dotenv import dotenv_values
-config = dotenv_values(os.path.dirname(__file__) + "/" + ".env")
-
 config = dotenv_values(os.path.dirname(__file__) + "/" + ".env")
 
 
@@ -15,6 +12,7 @@ def main():
             integrations.discord.init(config["DISCORD_TOKEN"])
         else:
             print(f"Missing '{str(type_)}' bot token.")
+        
     elif type_ == "telegram":
         if "TELEGRAM_TOKEN" in config and config["TELEGRAM_TOKEN"] != "False":
             import integrations.telegram
