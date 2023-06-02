@@ -17,7 +17,8 @@ def save(file, data, tojson=False):
     try:
         project_path = str(Path(__file__).parent.parent)
         if not os.path.exists(project_path + "/databank"):
-            os.makedirs(project_path + "/databank")
+            os.makedirs(project_path +"/databank")
+
         f = open(project_path + f"/databank/{file}", "w+")
         f.write(json.dumps(data, indent=4, sort_keys=True) if tojson else data)
         f.close()

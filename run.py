@@ -1,6 +1,7 @@
 import sys
 import os
 from dotenv import dotenv_values
+config = dotenv_values(os.path.dirname(__file__) + "/" + ".env")
 
 config = dotenv_values(os.path.dirname(__file__) + "/" + ".env")
 
