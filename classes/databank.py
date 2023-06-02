@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import Path
 
 class DataBank():
     data = False
@@ -29,11 +30,12 @@ def save(file, data, tojson=False):
 
 def load(file, isjson=False):
     try:
-        if not os.path.exists("./databank"):
-            os.makedirs("./databank")
+        project_path = str(Path(__file__).parent.parent)
+        if not os.path.exists(project_path + "/databank"):
+            os.makedirs(project_path + "/databank")
 
-        if os.path.exists("./databank"):
-            f = open(f"./databank/{file}", "r")
+        if os.path.exists(project_path + "/databank"):
+            f = open(project_path + f"/databank/{file}", "r")
             data = f.read()
             f.close()
             return DataBank(data) if isjson else data
