@@ -2,5 +2,6 @@
 */__pycache__
 databank/*
 .vscode/launch.json
+/venv/
 
-venv/
+.idea/
